@@ -1,0 +1,13 @@
+RewriteEngine On
+
+RewriteBase /student-forms
+
+RewriteCond %{REQUEST_URI} ^student-forms.*
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+RewriteCond %{REQUEST_URI} ^application.*
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
